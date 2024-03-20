@@ -262,6 +262,7 @@ a.social-link:focus {
 
 .section-with-two-columns {
   display: flex;
+  flex-direction: column-reverse;
 }
 
 .section-with-two-columns > *:nth-child(2) {
@@ -273,7 +274,7 @@ a.social-link:focus {
 }
 
 .section-images {
-  display: flex;
+  display: none;
 }
 
 .section-images img + img {
@@ -356,6 +357,7 @@ a.social-link:focus {
 /* List */
 .barbers-list {
   display: flex;
+  flex-direction: column;
 }
 
 .barbers-list li {
@@ -389,6 +391,7 @@ a.social-link:focus {
 .prices {
   margin-top: 46px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .prices-list {
@@ -425,6 +428,7 @@ a.social-link:focus {
 .motto-cards {
   margin-top: 40px;
   display: flex;
+  flex-direction: column;
   gap: 30px;
   justify-content: space-between;
 }
@@ -677,6 +681,43 @@ form .form-group {
   position: relative;
 }
 
+.js-menu-container {
+  display: none;
+}
+
+.js-menu-container.is-open {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1;
+  padding: 40px 31px;
+  height: 100%;
+}
+
+.js-close-menu {
+  border: none;
+  background: none;
+  align-self: self-end;
+}
+
+.js-menu-container .book-a-service-btn {
+  margin-left: 0;
+  margin-bottom: 34px;
+  margin-top: 24px;
+}
+
+.booking-and-contact-section {
+  flex-direction: column;
+}
+
+.motto-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 /* Stilizare tableta si device-uri peste 768px */
 @media screen and (min-width: 768px) {
   .global-aside {
@@ -708,6 +749,18 @@ form .form-group {
     top: 40px;
     right: 39px;
   }
+
+  .motto-container {
+    max-width: 700px;
+  }
+
+  .motto-cards {
+    flex-wrap: wrap;
+  }
+
+  .section-images {
+    display: flex;
+  }
 }
 
 /* Stilizare desktop si device-uri peste 1200px */
@@ -719,5 +772,29 @@ form .form-group {
 
   .burger-menu {
     display: none;
+  }
+
+  .barbers-list {
+    flex-direction: row;
+  }
+
+  .prices {
+    flex-wrap: nowrap;
+  }
+
+  .section-with-two-columns {
+    flex-direction: row;
+  }
+
+  .booking-and-contact-section {
+    flex-direction: row;
+  }
+
+  .motto-cards {
+    flex-direction: row;
+  }
+
+  .section-images {
+    display: flex;
   }
 }
